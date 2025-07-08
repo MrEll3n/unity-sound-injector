@@ -9,7 +9,7 @@ pub fn has_arguments(target: &str) -> bool {
     env::args().skip(1).any(|arg| arg == target)
 }
 
-pub fn print_help() {g
+pub fn print_help() {
     println!("Usage: usj <input1> <input2> <output>");
     println!("Example:");
     println!("  usj input.txt config.json output.log");
