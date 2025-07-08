@@ -1,21 +1,28 @@
-use std::env;
+use std::{env, process};
 
 /// Returns vector of argument strings
-pub fn read_arguments() -> Vec<String> {
+fn read_arguments() -> Vec<String> {
     env::args().skip(1).collect()
 }
 
-pub fn has_arguments(target: &str) -> bool {
+fn has_arguments(target: &str) -> bool {
     env::args().skip(1).any(|arg| arg == target)
 }
 
-pub fn print_help() {
-    println!("Usage: usj <input1> <input2> <output>");
-    println!("Example:");
-    println!("  usj input.txt config.json output.log");
-    println!();
-    println!("Arguments:");
-    println!("  <input1>    Path to the input file");
-    println!("  <input2>    Path to the config file");
-    println!("  <output>    Path to the output file to be created");
+fn print_help() {
+    println!("Usage: usj <file.asset>");
+}
+
+// Main argument handler
+pub fn arg_handler() {
+    // args without the name of the program
+    let args: Vec<String> = env::args().skip(1).collect();
+
+    match args.len() {
+        1 => {}
+        _ => {
+            print_help();
+            process::exit(1);
+        }
+    }
 }
