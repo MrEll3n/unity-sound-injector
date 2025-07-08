@@ -1,6 +1,7 @@
 [package]
 name = "usj"
 version = "0.1.0"
+authors = ["Vit 'MrEll3n' Novotny <mail@mrellen.eu>"]
 edition = "2024"
 
 [dependencies]
