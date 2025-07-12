@@ -16,7 +16,7 @@ fn print_help() {
 // Main argument handler
 pub fn arg_handler() {
     // args without the name of the program
-    let args: Vec<String> = env::args().skip(1).collect();
+    let args: Vec<String> = read_arguments();
 
     match args.len() {
         1 => {}
