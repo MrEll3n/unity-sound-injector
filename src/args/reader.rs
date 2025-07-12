@@ -1,6 +1,6 @@
 use std::{env, process};
 
-/// Returns vector of argument strings
+/// Returns vector of argument strings without program name
 fn read_arguments() -> Vec<String> {
     env::args().skip(1).collect()
 }
